@@ -1,9 +1,11 @@
 import { StyleSheet, Button, View, ScrollView } from 'react-native';
-import MyStack from './components/pages/router';
+import MyTabs from './components/MainContainer';
 
 export default function App() {
   return (
-    <MyStack/>
+    <View style={styles.container}>
+      <MyTabs />
+    </View>
   );
 }
 
@@ -22,7 +24,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-  },  
+  },
   scrollView: {
     marginHorizontal: 20,
   },
