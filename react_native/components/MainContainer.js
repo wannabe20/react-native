@@ -1,8 +1,12 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
+import React from 'react';
 import HomePage from '../pages/HomePage';
 import LoginPage from '../pages/LoginPage';
-import React from 'react';
+import Ionicons from '@expo/vector-icons/Ionicons';
+import ImagePickerExample from './ImagePicker';
+
+
 const Tab = createBottomTabNavigator();
 
 //Screen names
@@ -26,22 +30,23 @@ export default function MyTabs() {
               iconName = focused ? 'list' : 'list-outline';
 
             }
-
+            
             // You can return any component that you like here!
             return <Ionicons name={iconName} size={size} color={color} />;
-          },
+            
+          } ,
         })}
-        tabBarOptions={{
-          activeTintColor: 'tomato',
-          inactiveTintColor: 'grey',
-          labelStyle: { paddingBottom: 10, fontSize: 10 },
-          style: { padding: 10, height: 70 }
-        }}>
+        
+        >
 
         <Tab.Screen name={homeName} component={HomePage} />
         <Tab.Screen name={loginPage} component={LoginPage} />
 
+        
       </Tab.Navigator>
+
     </NavigationContainer>
+    
+    
   );
 }
